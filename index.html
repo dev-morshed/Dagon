@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caribbean Spirits - Premium Liquor Store in Dominican Republic</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#F79220',
+secondary: '#0473BD'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.logo-font {
+font-family: 'Pacifico', serif;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Age Verification Modal -->
+<div id="ageVerificationModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+<div class="bg-white rounded-xl p-8 max-w-md mx-4 text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-shield-check-line text-white text-2xl"></i>
+</div>
+<h2 class="text-2xl font-bold text-gray-900 mb-4">Age Verification Required</h2>
+<p class="text-gray-600 mb-6">You must be 18 years or older to access this website. Please confirm your age to continue.</p>
+<div class="space-y-3">
+<button id="confirmAge" class="w-full bg-primary text-white py-3 px-6 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+I am 18 or older
+</button>
+<button id="denyAge" class="w-full bg-gray-200 text-gray-700 py-3 px-6 !rounded-button font-semibold hover:bg-gray-300 transition-colors whitespace-nowrap">
+I am under 18
+</button>
+</div>
+<p class="text-xs text-gray-500 mt-4">Please drink responsibly. Excessive alcohol consumption is harmful to your health.</p>
+</div>
+</div>
+<!-- Header -->
+
+<header class="bg-white shadow-sm sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Logo (Left) -->
+      <div class="flex-shrink-0">
+        <img src="https://i.postimg.cc/yN82MmGd/dagon1-logo-1.png" alt="ProHealth Logo" class="h-12 w-auto">
+      </div>
+
+      <!-- Right Side: Navigation + Search + User Actions -->
+      <div class="flex items-center space-x-6">
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-700 hover:text-primary font-medium">Home</a>
+          <a href="#" class="text-gray-700 hover:text-primary font-medium">Categories</a>
+          <a href="#" class="text-gray-700 hover:text-primary font-medium">Brands</a>
+          <a href="#" class="text-gray-700 hover:text-primary font-medium">Offers</a>
+          <a href="#" class="text-gray-700 hover:text-primary font-medium">About</a>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="hidden md:flex items-center">
+          <div class="relative w-48">
+            <input type="text" placeholder="Search for spirits, wine, beer..."
+              class="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+            <div class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+              <i class="ri-search-line text-gray-400 text-sm"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Actions -->
+        <div class="flex items-center space-x-4">
+          <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+            <i class="ri-user-line"></i>
+          </button>
+          <button id="cartToggle" class="relative w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+            <i class="ri-shopping-cart-line"></i>
+            <span id="cartCount" class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+          </button>
+          <button class="md:hidden w-8 h-8 flex items-center justify-center text-gray-600">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+
+      </div> <!-- End Right Side -->
+      
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative h-[700px] bg-gradient-to-r from-secondary to-primary overflow-hidden">
+<div class="absolute inset-0" style="background-image: url('https://readdy.ai/api/search-image?query=Premium%20Caribbean%20liquor%20store%20interior%20with%20tropical%20ambiance%2C%20wooden%20shelves%20filled%20with%20bottles%20of%20rum%2C%20whiskey%2C%20and%20wine%2C%20warm%20lighting%2C%20palm%20plants%2C%20Dominican%20Republic%20style%20architecture%2C%20modern%20clean%20design%2C%20inviting%20atmosphere%2C%20professional%20photography%2C%20high%20quality%20commercial%20space&width=1200&height=400&seq=hero1&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.7;"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+<div class="w-full">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+Premium Spirits Delivered to Your Door
+</h1>
+<p class="text-xl text-white opacity-90 mb-8">
+Discover the finest collection of rum, whiskey, wine, and beer in Dominican Republic. Fast delivery, authentic products, unbeatable prices.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-secondary px-8 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+Shop Now
+</button>
+<button class="border-2 border-white text-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-secondary transition-colors whitespace-nowrap">
+View Offers
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Shop by Category</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore our extensive collection of premium spirits, wines, and beers from around the world</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20dark%20rum%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20liquor%20photography%2C%20studio%20lighting%2C%20transparent%20background&width=80&height=80&seq=rum1&orientation=squarish" alt="Rum" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Rum</h3>
+<p class="text-sm text-gray-500">Dominican & Caribbean</p>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20beer%20bottles%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20beverage%20photography%2C%20studio%20lighting%2C%20golden%20color&width=80&height=80&seq=beer1&orientation=squarish" alt="Beer" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Beer</h3>
+<p class="text-sm text-gray-500">Local & International</p>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20red%20wine%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20wine%20photography%2C%20studio%20lighting%2C%20elegant%20design&width=80&height=80&seq=wine1&orientation=squarish" alt="Wine" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Wine</h3>
+<p class="text-sm text-gray-500">Red, White & Rosé</p>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20whiskey%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20amber%20color&width=80&height=80&seq=whiskey1&orientation=squarish" alt="Whiskey" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Whiskey</h3>
+<p class="text-sm text-gray-500">Bourbon & Scotch</p>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20vodka%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20crystal%20clear&width=80&height=80&seq=vodka1&orientation=squarish" alt="Vodka" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Vodka</h3>
+<p class="text-sm text-gray-500">Premium & Flavored</p>
+</div>
+<div class="text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<img src="https://readdy.ai/api/search-image?query=Premium%20tequila%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20agave%20spirit&width=80&height=80&seq=tequila1&orientation=squarish" alt="Tequila" class="w-12 h-12 object-contain">
+</div>
+<h3 class="font-semibold text-gray-900">Tequila</h3>
+<p class="text-sm text-gray-500">Blanco & Añejo</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Products</h2>
+<p class="text-gray-600">Hand-picked premium spirits at the best prices</p>
+</div>
+<button class="text-primary font-semibold hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Brugal%20Dominican%20rum%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20liquor%20photography%2C%20studio%20lighting%2C%20amber%20colored%20rum&width=200&height=300&seq=product1&orientation=portrait" alt="Brugal Añejo" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded text-xs font-semibold">
+Best Seller
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Brugal Añejo</h3>
+<p class="text-sm text-gray-600 mb-2">Premium Dominican Rum • 40% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 1,250</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Presidente%20beer%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20beverage%20photography%2C%20studio%20lighting%2C%20golden%20beer&width=200&height=300&seq=product2&orientation=portrait" alt="Presidente Beer" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-secondary text-white px-2 py-1 rounded text-xs font-semibold">
+Local
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Presidente Beer</h3>
+<p class="text-sm text-gray-600 mb-2">Dominican Pilsner • 5% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 85</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Johnnie%20Walker%20Black%20Label%20whiskey%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting&width=200&height=300&seq=product3&orientation=portrait" alt="Johnnie Walker Black" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-semibold">
+Premium
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Johnnie Walker Black</h3>
+<p class="text-sm text-gray-600 mb-2">Blended Scotch Whisky • 40% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 2,850</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Concha%20y%20Toro%20red%20wine%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20wine%20photography%2C%20studio%20lighting%2C%20elegant%20design&width=200&height=300&seq=product4&orientation=portrait" alt="Concha y Toro" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-purple-600 text-white px-2 py-1 rounded text-xs font-semibold">
+Wine
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Concha y Toro Reserva</h3>
+<p class="text-sm text-gray-600 mb-2">Cabernet Sauvignon • 13.5% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 950</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Barcel%C3%B3%20Imperial%20Dominican%20rum%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20liquor%20photography%2C%20studio%20lighting%2C%20dark%20premium%20rum&width=200&height=300&seq=product5&orientation=portrait" alt="Barceló Imperial" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-amber-500 text-white px-2 py-1 rounded text-xs font-semibold">
+Dominican
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Barceló Imperial</h3>
+<p class="text-sm text-gray-600 mb-2">Premium Dominican Rum • 38% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 1,850</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Corona%20Extra%20beer%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20beverage%20photography%2C%20studio%20lighting%2C%20clear%20bottle%20with%20lime&width=200&height=300&seq=product6&orientation=portrait" alt="Corona Extra" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-semibold">
+Popular
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Corona Extra</h3>
+<p class="text-sm text-gray-600 mb-2">Mexican Lager Beer • 4.5% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 125</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 7 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Absolut%20vodka%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20crystal%20clear%20bottle&width=200&height=300&seq=product7&orientation=portrait" alt="Absolut Vodka" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-indigo-500 text-white px-2 py-1 rounded text-xs font-semibold">
+Classic
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Absolut Vodka</h3>
+<p class="text-sm text-gray-600 mb-2">Swedish Premium Vodka • 40% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 1,650</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 8 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Casillero%20del%20Diablo%20red%20wine%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20wine%20photography%2C%20studio%20lighting%2C%20Chilean%20wine%20elegant%20label&width=200&height=300&seq=product8&orientation=portrait" alt="Casillero del Diablo" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+New
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Casillero del Diablo</h3>
+<p class="text-sm text-gray-600 mb-2">Chilean Cabernet • 13.5% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 850</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<!-- Second Row of Products -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+<!-- Product Card 9 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Jack%20Daniels%20whiskey%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20Tennessee%20whiskey&width=200&height=300&seq=product9&orientation=portrait" alt="Jack Daniel's" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-black text-white px-2 py-1 rounded text-xs font-semibold">
+Classic
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Jack Daniel's Old No.7</h3>
+<p class="text-sm text-gray-600 mb-2">Tennessee Whiskey • 40% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 2,450</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 10 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Heineken%20beer%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20beverage%20photography%2C%20studio%20lighting%2C%20green%20bottle&width=200&height=300&seq=product10&orientation=portrait" alt="Heineken" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+International
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Heineken</h3>
+<p class="text-sm text-gray-600 mb-2">Dutch Premium Lager • 5% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 140</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 11 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Don%20Julio%20tequila%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting%2C%20silver%20tequila%20premium%20bottle&width=200&height=300&seq=product11&orientation=portrait" alt="Don Julio" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-semibold">
+Premium
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Don Julio Blanco</h3>
+<p class="text-sm text-gray-600 mb-2">Premium Silver Tequila • 40% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 3,200</span>
+<span class="text-orange-600 text-sm font-medium">Low Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Product Card 12 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 group">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Mo%C3%ABt%20Chandon%20champagne%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20wine%20photography%2C%20studio%20lighting%2C%20elegant%20sparkling%20wine&width=200&height=300&seq=product12&orientation=portrait" alt="Moët & Chandon" class="w-full h-48 object-contain object-top">
+<div class="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded text-xs font-semibold">
+Luxury
+</div>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Moët & Chandon</h3>
+<p class="text-sm text-gray-600 mb-2">Champagne Brut • 12% ABV</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xl font-bold text-gray-900">RD$ 4,850</span>
+<span class="text-green-600 text-sm font-medium">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2 px-4 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Recommendations -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<div class="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full mb-4">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-robot-line text-sm"></i>
+</div>
+<span class="text-sm font-semibold">AI Powered</span>
+</div>
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Recommended for You</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our AI analyzes your preferences and suggests the perfect spirits based on your taste profile</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Recommendation Card 1 -->
+<div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-star-fill text-white text-sm"></i>
+</div>
+<h3 class="font-semibold text-gray-900">Perfect Match</h3>
+</div>
+<div class="flex items-center space-x-4 mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Barcel%C3%B3%20Imperial%20Dominican%20rum%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20liquor%20photography%2C%20studio%20lighting&width=80&height=120&seq=rec1&orientation=portrait" alt="Barceló Imperial" class="w-16 h-24 object-contain">
+<div class="flex-1">
+<h4 class="font-semibold text-gray-900">Barceló Imperial</h4>
+<p class="text-sm text-gray-600 mb-2">Premium Dominican Rum</p>
+<p class="text-lg font-bold text-gray-900">RD$ 1,850</p>
+</div>
+</div>
+<p class="text-sm text-gray-700 mb-4">Based on your love for aged spirits, this premium rum offers complex flavors with notes of vanilla and oak.</p>
+<button class="w-full bg-amber-500 text-white py-2 px-4 !rounded-button font-semibold hover:bg-amber-600 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Recommendation Card 2 -->
+<div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-group-line text-white text-sm"></i>
+</div>
+<h3 class="font-semibold text-gray-900">Trending Now</h3>
+</div>
+<div class="flex items-center space-x-4 mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Grey%20Goose%20vodka%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting&width=80&height=120&seq=rec2&orientation=portrait" alt="Grey Goose" class="w-16 h-24 object-contain">
+<div class="flex-1">
+<h4 class="font-semibold text-gray-900">Grey Goose Vodka</h4>
+<p class="text-sm text-gray-600 mb-2">Premium French Vodka</p>
+<p class="text-lg font-bold text-gray-900">RD$ 3,200</p>
+</div>
+</div>
+<p class="text-sm text-gray-700 mb-4">Popular among customers with similar preferences. Smooth, clean taste perfect for cocktails or neat.</p>
+<button class="w-full bg-blue-500 text-white py-2 px-4 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+<!-- Recommendation Card 3 -->
+<div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-shopping-bag-line text-white text-sm"></i>
+</div>
+<h3 class="font-semibold text-gray-900">Frequently Bought Together</h3>
+</div>
+<div class="flex items-center space-x-4 mb-4">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Hennessy%20VS%20cognac%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20spirits%20photography%2C%20studio%20lighting&width=80&height=120&seq=rec3&orientation=portrait" alt="Hennessy VS" class="w-16 h-24 object-contain">
+<div class="flex-1">
+<h4 class="font-semibold text-gray-900">Hennessy VS</h4>
+<p class="text-sm text-gray-600 mb-2">Premium French Cognac</p>
+<p class="text-lg font-bold text-gray-900">RD$ 4,500</p>
+</div>
+</div>
+<p class="text-sm text-gray-700 mb-4">Often purchased with premium whiskeys. Customers love this smooth cognac for special occasions.</p>
+<button class="w-full bg-purple-500 text-white py-2 px-4 !rounded-button font-semibold hover:bg-purple-600 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- About Content -->
+<div>
+<div class="inline-flex items-center bg-primary text-white px-4 py-2 rounded-full mb-6">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-heart-line text-sm"></i>
+</div>
+<span class="text-sm font-semibold">Our Story</span>
+</div>
+<h2 class="text-3xl font-bold text-gray-900 mb-6">Bringing Premium Spirits to Dominican Republic</h2>
+<p class="text-gray-600 mb-6 text-lg leading-relaxed">
+Since 2015, Caribbean Spirits has been the premier destination for authentic, premium liquors in the Dominican Republic. What started as a small family business has grown into the country's most trusted online liquor store.
+</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+<i class="ri-check-line text-white text-sm"></i>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">Authentic Products</h3>
+<p class="text-gray-600">We source directly from distilleries and authorized distributors to ensure every bottle is genuine and of the highest quality.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+<i class="ri-truck-line text-white text-sm"></i>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">Fast Delivery</h3>
+<p class="text-gray-600">Same-day delivery in Santo Domingo and next-day delivery across major cities in the Dominican Republic.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+<i class="ri-shield-check-line text-white text-sm"></i>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">Responsible Service</h3>
+<p class="text-gray-600">We are committed to responsible alcohol sales and strictly verify age for all purchases and deliveries.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Learn More About Us
+</button>
+<button class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+Contact Our Team
+</button>
+</div>
+</div>
+<!-- About Image -->
+<div class="relative">
+<div class="relative overflow-hidden rounded-2xl shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=Modern%20Caribbean%20liquor%20store%20interior%20with%20elegant%20wooden%20shelves%20displaying%20premium%20bottles%20of%20rum%2C%20whiskey%2C%20and%20wine%2C%20warm%20ambient%20lighting%2C%20tropical%20plants%2C%20Dominican%20Republic%20style%20architecture%2C%20professional%20staff%20member%20in%20the%20background%2C%20welcoming%20atmosphere%2C%20high-end%20retail%20space%2C%20authentic%20Caribbean%20ambiance%2C%20natural%20lighting&width=600&height=700&seq=about1&orientation=portrait" alt="Caribbean Spirits Store Interior" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<!-- Floating Stats -->
+<div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-6">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary">9+</div>
+<div class="text-sm text-gray-600 font-medium">Years of Excellence</div>
+</div>
+</div>
+<div class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-6">
+<div class="text-center">
+<div class="text-2xl font-bold text-secondary">50K+</div>
+<div class="text-sm text-gray-600 font-medium">Happy Customers</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Special Offers -->
+<section class="py-16 bg-gradient-to-r from-primary to-secondary">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center text-white mb-12">
+<h2 class="text-3xl font-bold mb-4">Limited Time Offers</h2>
+<p class="text-xl opacity-90">Don't miss out on these exclusive deals</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Offer 1 -->
+<div class="bg-white rounded-xl p-8 text-center">
+<div class="text-4xl font-bold text-primary mb-2">25% OFF</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Premium Rum Collection</h3>
+<p class="text-gray-600 mb-6">Get 25% off on all Dominican and Caribbean rums. Limited time offer valid until supplies last.</p>
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Shop Rum Collection
+</button>
+</div>
+<!-- Offer 2 -->
+<div class="bg-white rounded-xl p-8 text-center">
+<div class="text-4xl font-bold text-secondary mb-2">Buy 2 Get 1</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Beer Selection</h3>
+<p class="text-gray-600 mb-6">Mix and match from our beer selection. Buy any 2 beers and get the third one absolutely free.</p>
+<button class="bg-secondary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Shop Beer Selection
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Delivery Zone Map -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Delivery Zones</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We deliver premium spirits across the Dominican Republic. Check if we deliver to your area and enjoy fast, reliable service.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Map Container -->
+<div class="lg:col-span-2">
+<div class="relative h-96 rounded-xl overflow-hidden shadow-lg">
+<div class="absolute inset-0 bg-center bg-cover" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+<!-- Map Markers -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg animate-pulse"></div>
+<div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
+<span class="text-sm font-semibold text-gray-900">Main Store - Santo Domingo</span>
+</div>
+</div>
+<!-- Additional Markers -->
+<div class="absolute top-1/3 right-1/3">
+<div class="w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-lg"></div>
+</div>
+<div class="absolute bottom-1/3 left-1/4">
+<div class="w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-lg"></div>
+</div>
+<div class="absolute top-2/3 right-1/4">
+<div class="w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-lg"></div>
+</div>
+</div>
+</div>
+<!-- Delivery Information -->
+<div class="space-y-6">
+<div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6 border border-primary/20">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-4">
+<i class="ri-truck-line text-white"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Delivery Zones</h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center">
+<div class="w-3 h-3 bg-primary rounded-full mr-3"></div>
+<div>
+<span class="font-semibold text-gray-900">Santo Domingo</span>
+<p class="text-sm text-gray-600">Same-day delivery • Free delivery over RD$ 2,000</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-3 h-3 bg-secondary rounded-full mr-3"></div>
+<div>
+<span class="font-semibold text-gray-900">Santiago</span>
+<p class="text-sm text-gray-600">Next-day delivery • RD$ 200 delivery fee</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-3 h-3 bg-secondary rounded-full mr-3"></div>
+<div>
+<span class="font-semibold text-gray-900">La Romana</span>
+<p class="text-sm text-gray-600">Next-day delivery • RD$ 200 delivery fee</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-3 h-3 bg-secondary rounded-full mr-3"></div>
+<div>
+<span class="font-semibold text-gray-900">Puerto Plata</span>
+<p class="text-sm text-gray-600">2-3 days delivery • RD$ 300 delivery fee <br><br><br>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Company Info -->
+<div class="col-span-1 md:col-span-2">
+
+	 <!-- Logo (Left) -->
+      <div class="flex-shrink-0">
+        <img src="https://i.postimg.cc/yN82MmGd/dagon1-logo-1.png" alt="ProHealth Logo" class="h-16 w-auto">
+      </div>
+
+
+
+<p class="text-gray-400 mb-6 max-w-md">
+Dominican Republic's premier online liquor store. We deliver authentic, premium spirits right to your doorstep with fast, reliable service.
+</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-facebook-fill text-sm"></i>
+</div>
+<div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-instagram-line text-sm"></i>
+</div>
+<div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-whatsapp-line text-sm"></i>
+</div>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Delivery Info</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Return Policy</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Track Order</a></li>
+</ul>
+</div>
+<!-- Customer Service -->
+<div>
+<h3 class="font-semibold mb-4">Customer Service</h3>
+<div class="space-y-3 text-gray-400">
+<div class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-sm"></i>
+</div>
+<span>+1 (809) 555-0123</span>
+</div>
+<div class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-sm"></i>
+</div>
+<span>info@caribbeanspirits.do</span>
+</div>
+<div class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-map-pin-line text-sm"></i>
+</div>
+<span>Santo Domingo, Dominican Republic</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Footer -->
+<div class="border-t border-gray-800 mt-8 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">
+© 2025 Caribbean Spirits. All rights reserved.
+</p>
+<div class="flex items-center space-x-6 text-sm text-gray-400">
+<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+<span class="text-red-400 font-semibold">Must be 18+ to purchase</span>
+</div>
+</div>
+<div class="mt-4 p-4 bg-red-900 rounded-lg">
+<p class="text-red-200 text-sm text-center">
+<strong>Responsible Drinking Warning:</strong> Excessive alcohol consumption is harmful to your health. Please drink responsibly. Not for sale to persons under 18 years of age.
+</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Shopping Cart Sidebar -->
+<div id="cartSidebar" class="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+<div class="flex flex-col h-full">
+<!-- Cart Header -->
+<div class="flex items-center justify-between p-6 border-b">
+<h2 class="text-xl font-semibold text-gray-900">Shopping Cart</h2>
+<button id="closeCart" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line"></i>
+</button>
+</div>
+<!-- Cart Items -->
+<div class="flex-1 overflow-y-auto p-6">
+<div class="space-y-4">
+<!-- Cart Item 1 -->
+<div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Brugal%20Dominican%20rum%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20liquor%20photography%2C%20studio%20lighting&width=60&height=80&seq=cart1&orientation=portrait" alt="Brugal Añejo" class="w-12 h-16 object-contain">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 text-sm">Brugal Añejo</h3>
+<p class="text-xs text-gray-600">Premium Dominican Rum</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-bold text-gray-900">RD$ 1,250</span>
+<div class="flex items-center space-x-2">
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-subtract-line text-xs"></i>
+</button>
+<span class="text-sm font-semibold">1</span>
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-add-line text-xs"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Presidente%20beer%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20beverage%20photography%2C%20studio%20lighting&width=60&height=80&seq=cart2&orientation=portrait" alt="Presidente Beer" class="w-12 h-16 object-contain">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 text-sm">Presidente Beer</h3>
+<p class="text-xs text-gray-600">Dominican Pilsner</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-bold text-gray-900">RD$ 170</span>
+<div class="flex items-center space-x-2">
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-subtract-line text-xs"></i>
+</button>
+<span class="text-sm font-semibold">2</span>
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-add-line text-xs"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Concha%20y%20Toro%20red%20wine%20bottle%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%2C%20minimalist%20style%2C%20commercial%20wine%20photography%2C%20studio%20lighting&width=60&height=80&seq=cart3&orientation=portrait" alt="Concha y Toro" class="w-12 h-16 object-contain">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 text-sm">Concha y Toro Reserva</h3>
+<p class="text-xs text-gray-600">Cabernet Sauvignon</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-bold text-gray-900">RD$ 950</span>
+<div class="flex items-center space-x-2">
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-subtract-line text-xs"></i>
+</button>
+<span class="text-sm font-semibold">1</span>
+<button class="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-600 hover:bg-gray-300">
+<i class="ri-add-line text-xs"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Footer -->
+<div class="border-t p-6">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-gray-600">Subtotal:</span>
+<span class="font-semibold text-gray-900">RD$ 2,370</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-600">Delivery:</span>
+<span class="font-semibold text-gray-900">RD$ 150</span>
+</div>
+<div class="border-t pt-4">
+<div class="flex justify-between items-center">
+<span class="text-lg font-semibold text-gray-900">Total:</span>
+<span class="text-xl font-bold text-primary">RD$ 2,520</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 px-6 !rounded-button font-semibold hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Proceed to Checkout
+</button>
+<button class="w-full bg-gray-200 text-gray-700 py-3 px-6 !rounded-button font-semibold hover:bg-gray-300 transition-colors whitespace-nowrap">
+Continue Shopping
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Overlay -->
+<div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+<script id="ageVerification">
+document.addEventListener('DOMContentLoaded', function() {
+const modal = document.getElementById('ageVerificationModal');
+const confirmBtn = document.getElementById('confirmAge');
+const denyBtn = document.getElementById('denyAge');
+confirmBtn.addEventListener('click', function() {
+modal.style.display = 'none';
+localStorage.setItem('ageVerified', 'true');
+});
+denyBtn.addEventListener('click', function() {
+alert('You must be 18 or older to access this website.');
+window.location.href = 'https://www.google.com';
+});
+if (localStorage.getItem('ageVerified') === 'true') {
+modal.style.display = 'none';
+}
+});
+</script>
+<script id="cartFunctionality">
+document.addEventListener('DOMContentLoaded', function() {
+const cartToggle = document.getElementById('cartToggle');
+const cartSidebar = document.getElementById('cartSidebar');
+const cartOverlay = document.getElementById('cartOverlay');
+const closeCart = document.getElementById('closeCart');
+function openCart() {
+cartSidebar.classList.remove('translate-x-full');
+cartOverlay.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function closeCartSidebar() {
+cartSidebar.classList.add('translate-x-full');
+cartOverlay.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+cartToggle.addEventListener('click', openCart);
+closeCart.addEventListener('click', closeCartSidebar);
+cartOverlay.addEventListener('click', closeCartSidebar);
+});
+</script>
+
+
+</body>
+</html>
